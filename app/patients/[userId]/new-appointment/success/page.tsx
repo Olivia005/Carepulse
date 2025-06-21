@@ -62,6 +62,9 @@ const Success = async ({params: {userId}, searchParams} : SearchParamProps) => {
               <Link href={`/patients/${userId}/new-appointment`}>
               New Appointment
               </Link>
+              <Link className='border border-green-500 bg-black' href={`/payment`}>
+              Proceed to Payment
+              </Link>
            </Button>
             <p className='copyright'>© 2025 CarePulse</p>
         </div>
