@@ -79,8 +79,8 @@ carepulse/
 │   ├── wayout/                 # Additional healthcare module
 │   ├── globals.css
 │   ├── layout.tsx
-│   ├── page.tsx
-│   └── global-error.tsx
+│   └── page.tsx
+│   
 │
 ├── components/                 # Reusable UI components
 ├── constants/                  # Application constants
@@ -103,7 +103,7 @@ carepulse/
 ### Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/carepulse.git
+git clone https://github.com/Olivia005/Carepulse.git
 
 cd carepulse
 ```
@@ -113,30 +113,6 @@ cd carepulse
 ```bash
 npm install
 ```
-
-### Configure Environment Variables
-
-Create a `.env.local` file in the root directory.
-
-```env
-NEXT_PUBLIC_ENDPOINT=
-
-NEXT_PUBLIC_PROJECT_ID=
-
-NEXT_PUBLIC_DATABASE_ID=
-
-NEXT_PUBLIC_PATIENT_COLLECTION_ID=
-
-NEXT_PUBLIC_DOCTOR_COLLECTION_ID=
-
-NEXT_PUBLIC_APPOINTMENT_COLLECTION_ID=
-
-NEXT_PUBLIC_BUCKET_ID=
-```
-
-> Fill these values from your Appwrite project.
-
----
 
 ### Run the development server
 
@@ -148,36 +124,6 @@ Open
 
 ```
 http://localhost:3000
-```
-
----
-
-## 📸 Screenshots
-
-> Add screenshots here after deployment.
-
-### Home Page
-
-```
-images/home.png
-```
-
-### Patient Registration
-
-```
-images/register.png
-```
-
-### Appointment Booking
-
-```
-images/appointment.png
-```
-
-### Admin Dashboard
-
-```
-images/admin.png
 ```
 
 ---
@@ -221,18 +167,13 @@ git push origin feature-name
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
 
 ## 👨‍💻 Author
 
-**Anubhav Sikder**
+**OLivia Sikder**
 
-- GitHub: https://github.com/yourusername
-- LinkedIn: https://linkedin.com/in/yourprofile
+- GitHub: https://github.com/Olivia005
+- LinkedIn: https://linkedin.com/in/olivia-sikder
 
 ---
 
