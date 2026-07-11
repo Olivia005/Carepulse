@@ -1,9 +1,30 @@
 /* eslint-disable no-unused-vars */
 
 declare type SearchParamProps = {
-    params: { [key: string]: string };
-    searchParams: { [key: string]: string | string[] | undefined };
+    params: Promise<{ [key: string]: string }>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
   };
+
+  declare interface Doctor {
+    id: number;
+    name: string;
+    specialty: string;
+    department: string;
+    image: string;
+    rating: number;
+    experience: number;
+    education: string[];
+    certifications: string[];
+    languages: string[];
+    availability: string;
+    location: string;
+    phone: string;
+    bio: string;
+    specializations: string[];
+    reviewCount?: number;
+    nextAvailable?: string;
+    consultationFee?: string;
+  }
   
   declare type Gender = "male" | "female" | "other";
   declare type Status = "pending" | "scheduled" | "cancelled";

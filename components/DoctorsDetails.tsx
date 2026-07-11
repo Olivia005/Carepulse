@@ -20,29 +20,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-interface Doctor {
-  id: number;
-  name: string;
-  specialty: string;
-  department: string;
-  image: string;
-  rating: number;
-  experience: number;
-  education: string[];
-  certifications: string[];
-  languages: string[];
-  availability: string;
-  location: string;
-  phone: string;
-  bio: string;
-  specializations: string[];
-}
-
-const DoctorsDetails: React.FC = () => {
-  const [selectedDepartment, setSelectedDepartment] = useState<string>("All");
-  const [searchTerm, setSearchTerm] = useState<string>("");
-
-  const doctors: Doctor[] = [
+export const doctors: Doctor[] = [
     {
       id: 1,
       name: "Dr. Sarah Johnson",
@@ -241,6 +219,10 @@ const DoctorsDetails: React.FC = () => {
       ],
     },
   ];
+
+const DoctorsDetails: React.FC = () => {
+  const [selectedDepartment, setSelectedDepartment] = useState<string>("All");
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
   const departments: string[] = [
     "All",

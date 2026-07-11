@@ -1,161 +1,174 @@
-// import DoctorRecommendations, { DoctorRecommendationsHero } from '@/components/DoctorRecommendationsHero'
-// import React from 'react'
+"use client";
+import React, { useState } from 'react';
+import DoctorRecommendationsHero from '@/components/DoctorRecommendationsHero';
+import { AIRecommendation } from '@/components/DoctorAIRecommendations';
+import { doctors } from '@/components/DoctorsDetails';
+import { Sparkles, Star, ArrowLeft, ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
 
-// const page = () => {
-//   return (
-//     <main>
-//         <div className="min-h-screen bg-gray-900">
-//       <DoctorRecommendationsHero/>
-      
-//       <section id="doctors" className="py-20 bg-gray-900">
-//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//           {/* AI Recommendations */}
-//           <AIRecomme
-//             doctors={doctors}
-//             userPreferences={userPreferences}
-//             onDoctorSelect={handleViewProfile}
-//           />
+export default function AIRecommendationsPage() {
+  const [selectedDept, setSelectedDept] = useState<string>("All");
+  const [minRating, setMinRating] = useState<number>(4.5);
+  const [minExperience, setMinExperience] = useState<number>(10);
+  
+  // Custom modal or detailed view for selected doctor
+  const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null);
 
-//           {/* Header */}
-//           <div className="text-center space-y-4 mb-16">
-//             <h2 className="text-3xl sm:text-4xl font-bold text-white">
-//               Our Medical Experts
-//             </h2>
-//             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-//               Discover our team of highly qualified physicians and specialists. Use our AI-powered 
-//               recommendation system to find the perfect doctor based on ratings, experience, and specializations.
-//             </p>
-//           </div>
+  // Departments list for filter selection
+  const departments = ["All", "Cardiology", "Neurology", "Pediatrics", "Orthopedics", "Ophthalmology", "Surgery", "Internal Medicine"];
 
-//           {/* Search and Filters */}
-//           <div className="mb-12 space-y-6">
-//             {/* Search Bar */}
-//             <div className="max-w-2xl mx-auto relative">
-//               <div className="relative">
-//                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-//                 <input
-//                   type="text"
-//                   placeholder="Search doctors by name, specialty, or department..."
-//                   value={searchTerm}
-//                   onChange={(e) => setSearchTerm(e.target.value)}
-//                   className="w-full bg-black border border-emerald-500/30 rounded-xl pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 text-lg"
-//                 />
-//               </div>
-//             </div>
+  const handleDoctorSelect = (doctor: Doctor) => {
+    setSelectedDoctor(doctor);
+  };
 
-//             {/* Filter Toggle */}
-//             <div className="flex justify-center">
-//               <button
-//                 onClick={() => setShowFilters(!showFilters)}
-//                 className="flex items-center space-x-2 bg-black border border-emerald-500/30 px-6 py-3 rounded-lg text-emerald-400 hover:bg-emerald-500/10 transition-all duration-200"
-//               >
-//                 <Filter className="h-4 w-4" />
-//                 <span>Filters</span>
-//                 {(selectedDepartment !== 'All' || ratingFilter > 0) && (
-//                   <span className="bg-emerald-500 text-black px-2 py-0.5 rounded-full text-xs font-bold">
-//                     {(selectedDepartment !== 'All' ? 1 : 0) + (ratingFilter > 0 ? 1 : 0)}
-//                   </span>
-//                 )}
-//               </button>
-//             </div>
+  // Construct preferences for the algorithm
+  const userPreferences = {
+    preferredDepartments: selectedDept === "All" ? departments.filter(d => d !== "All") : [selectedDept],
+    searchHistory: [],
+    ratingPreference: minRating
+  };
 
-//             {/* Filters Panel */}
-//             {showFilters && (
-//               <div className="bg-black/80 backdrop-blur-sm border border-emerald-500/30 rounded-xl p-6 space-y-6">
-//                 {/* Department Filter */}
-//                 <div>
-//                   <h3 className="text-lg font-medium text-white mb-4">Department</h3>
-//                   <div className="flex flex-wrap gap-3">
-//                     {departments.map((dept) => (
-//                       <button
-//                         key={dept}
-//                         onClick={() => setSelectedDepartment(dept)}
-//                         className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-//                           selectedDepartment === dept
-//                             ? "bg-emerald-500 text-black"
-//                             : "bg-gray-800 text-gray-300 border border-emerald-500/30 hover:border-emerald-500/60 hover:text-emerald-400"
-//                         }`}
-//                       >
-//                         {dept}
-//                       </button>
-//                     ))}
-//                   </div>
-//                 </div>
+  return (
+    <main className="min-h-screen bg-gray-900 text-white pb-20">
+      {/* Back to Doctors list */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <Link href="/doctors" className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors">
+          <ArrowLeft className="w-4 h-4" />
+          <span>Back to Doctors list</span>
+        </Link>
+      </div>
 
-//                 {/* Rating Filter */}
-//                 <div>
-//                   <h3 className="text-lg font-medium text-white mb-4">Minimum Rating</h3>
-//                   <div className="flex items-center space-x-4">
-//                     {[0, 4.0, 4.5, 4.8].map((rating) => (
-//                       <button
-//                         key={rating}
-//                         onClick={() => setRatingFilter(rating)}
-//                         className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 ${
-//                           ratingFilter === rating
-//                             ? "bg-emerald-500 text-black"
-//                             : "bg-gray-800 text-gray-300 hover:bg-emerald-500/10 hover:text-emerald-400"
-//                         }`}
-//                       >
-//                         <Star className="h-4 w-4 fill-current" />
-//                         <span>{rating === 0 ? 'All' : ${rating}+}</span>
-//                       </button>
-//                     ))}
-//                   </div>
-//                 </div>
+      <DoctorRecommendationsHero />
 
-//                 {/* Clear Filters */}
-//                 <div className="flex justify-end">
-//                   <button
-//                     onClick={clearFilters}
-//                     className="flex items-center space-x-2 text-gray-400 hover:text-emerald-400 transition-colors duration-200"
-//                   >
-//                     <X className="h-4 w-4" />
-//                     <span>Clear All Filters</span>
-//                   </button>
-//                 </div>
-//               </div>
-//             )}
-//           </div>
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        {/* Interactive Recommendation Controls */}
+        <div className="bg-black/60 border border-emerald-500/20 rounded-2xl p-6 mb-12 backdrop-blur-md">
+          <div className="flex items-center gap-3 mb-6">
+            <Sparkles className="w-5 h-5 text-emerald-400 animate-pulse" />
+            <h2 className="text-xl font-semibold text-white">Fine-tune AI Matcher</h2>
+          </div>
 
-//           {/* Results Count */}
-//           <div className="mb-8 text-center">
-//             <p className="text-gray-400">
-//               Showing {filteredDoctors.length} of {doctors.length} doctors
-//               {searchTerm && ` for "${searchTerm}"`}
-//             </p>
-//           </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Preferred Specialty/Department */}
+            <div className="flex flex-col gap-2">
+              <label className="text-sm font-medium text-emerald-200">Department / Specialty</label>
+              <select
+                value={selectedDept}
+                onChange={(e) => setSelectedDept(e.target.value)}
+                className="bg-gray-800 border border-emerald-500/20 text-white rounded-lg p-3 outline-none focus:border-emerald-500 transition"
+              >
+                {departments.map(dept => (
+                  <option key={dept} value={dept}>{dept}</option>
+                ))}
+              </select>
+            </div>
 
-//           {/* Doctor Cards */}
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-//             {filteredDoctors.map((doctor) => (
-//               <DoctorCard
-//                 key={doctor.id}
-//                 doctor={doctor}
-//                 onViewProfile={handleViewProfile}
-//                 onContactDoctor={handleContactDoctor}
-//               />
-//             ))}
-//           </div>
+            {/* Minimum Rating */}
+            <div className="flex flex-col gap-2">
+              <label className="text-sm font-medium text-emerald-200">Target Doctor Rating</label>
+              <div className="flex items-center gap-4">
+                <input
+                  type="range"
+                  min="4.0"
+                  max="5.0"
+                  step="0.1"
+                  value={minRating}
+                  onChange={(e) => setMinRating(parseFloat(e.target.value))}
+                  className="w-full accent-emerald-500"
+                />
+                <span className="text-emerald-400 font-bold w-12 text-center">{minRating} ★</span>
+              </div>
+            </div>
 
-//           {/* No Results */}
-//           {filteredDoctors.length === 0 && (
-//             <div className="text-center py-16">
-//               <div className="text-gray-400 text-xl mb-6">
-//                 No doctors found matching your criteria
-//               </div>
-//               <button
-//                 onClick={clearFilters}
-//                 className="bg-emerald-500 text-black px-8 py-3 rounded-lg hover:bg-emerald-400 transition-colors duration-200 font-medium"
-//               >
-//                 Clear All Filters
-//               </button>
-//             </div>
-//           )}
-//         </div>
-//       </section>
-//     </div>
-//     </main>
-//   )
-// }
+            {/* Minimum Experience */}
+            <div className="flex flex-col gap-2">
+              <label className="text-sm font-medium text-emerald-200">Min. Experience (Years)</label>
+              <div className="flex items-center gap-4">
+                <input
+                  type="range"
+                  min="5"
+                  max="20"
+                  step="1"
+                  value={minExperience}
+                  onChange={(e) => setMinExperience(parseInt(e.target.value))}
+                  className="w-full accent-emerald-500"
+                />
+                <span className="text-emerald-400 font-bold w-12 text-center">{minExperience}+ Yrs</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-// export default page
+        {/* AI Recommendations Section */}
+        <AIRecommendation
+          doctors={doctors.filter(doc => doc.experience >= minExperience && (selectedDept === "All" || doc.department === selectedDept))}
+          userPreferences={userPreferences}
+          onDoctorSelect={handleDoctorSelect}
+        />
+
+        {/* Selected Doctor Detail Modal/Card (if selected) */}
+        {selectedDoctor && (
+          <div className="mt-8 bg-gradient-to-r from-emerald-950/40 via-black to-emerald-950/40 border border-emerald-500/30 rounded-2xl p-8 transition-all duration-300">
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              <img
+                src={selectedDoctor.image}
+                alt={selectedDoctor.name}
+                className="w-32 h-32 rounded-2xl object-cover border-4 border-emerald-500/40"
+              />
+              <div className="flex-1 space-y-4">
+                <div className="flex flex-wrap items-center justify-between gap-4">
+                  <div>
+                    <h3 className="text-3xl font-bold text-white">{selectedDoctor.name}</h3>
+                    <p className="text-emerald-400 font-semibold">{selectedDoctor.specialty} • {selectedDoctor.department}</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1">
+                      <Star className="w-4 h-4 fill-emerald-400" />
+                      {selectedDoctor.rating} Rating
+                    </span>
+                    <span className="bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full text-sm font-bold">
+                      {selectedDoctor.experience} Yrs Exp
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-gray-300 text-lg leading-relaxed">{selectedDoctor.bio}</p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-emerald-500/20">
+                  <div>
+                    <h4 className="text-sm font-bold text-emerald-300 uppercase tracking-wider mb-2">Education & Training</h4>
+                    <ul className="list-disc pl-5 space-y-1 text-gray-300 text-sm">
+                      {selectedDoctor.education.map((edu, idx) => (
+                        <li key={idx}>{edu}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-emerald-300 uppercase tracking-wider mb-2">Specializations</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedDoctor.specializations.map((spec, idx) => (
+                        <span key={idx} className="bg-gray-800 text-emerald-300 px-3 py-1 rounded-md text-xs border border-emerald-500/10">
+                          {spec}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex justify-end pt-6">
+                  <Link
+                    href={`/patients/register`} 
+                    className="bg-gradient-to-r from-emerald-500 to-green-400 hover:from-emerald-400 hover:to-green-300 text-black font-semibold px-6 py-3 rounded-lg flex items-center gap-2 transition duration-200"
+                  >
+                    <span>Book Appointment</span>
+                    <ArrowUpRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </section>
+    </main>
+  );
+}
