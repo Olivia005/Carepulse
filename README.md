@@ -65,21 +65,37 @@ CarePulse is a modern healthcare management platform that simplifies the process
 
 ## 📂 Project Structure
 
-```
+```text
 carepulse/
-│
 ├── app/
-├── components/
-├── constants/
-├── lib/
-├── public/
-├── styles/
-├── types/
-├── next.config.ts
+│   ├── admin/                  # Admin dashboard
+│   ├── aiRecommendations/      # AI-powered health recommendations
+│   ├── api/                    # API routes
+│   ├── chatbot/                # AI healthcare chatbot
+│   ├── doctors/                # Doctors directory
+│   ├── home/                   # Home dashboard
+│   ├── laboratorytest/         # Lab test booking & reports
+│   ├── patients/[userId]/      # Dynamic patient profile & appointments
+│   ├── wayout/                 # Additional healthcare module
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── global-error.tsx
+│
+├── components/                 # Reusable UI components
+├── constants/                  # Application constants
+├── lib/                        # Utilities, Appwrite config & helper functions
+├── public/                     # Static assets
+├── types/                      # TypeScript types & interfaces
+│
+├── .env.local                  # Environment variables
+├── components.json             # shadcn/ui configuration
+├── instrumentation.ts          # Monitoring & instrumentation
+├── next.config.ts              # Next.js configuration
+├── eslint.config.mjs           # ESLint configuration
 ├── package.json
 └── README.md
 ```
-
 ---
 
 ## 🚀 Getting Started
