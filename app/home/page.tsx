@@ -24,7 +24,7 @@ export default function Home({ searchParams} : SearchParamProps) {
         <p className="justify-items-end text-dark-600 xl:text-left">
         © 2025 CarePulse.
         </p>
-        <Link href="/?admin=true" className="text-green-500">
+        <Link href="/home?admin=true" className="text-green-500">
           Admin
         </Link>
         </div>

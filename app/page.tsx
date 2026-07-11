@@ -1,17 +1,14 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Statboxes from "@/components/Statboxes";
-import { Activity, Ambulance, ArrowRight, Baby, Bone, Brain, Clock, Eye, Facebook, Heart, Linkedin, Shield, Stethoscope, Twitter, Users2 } from "lucide-react";
-import { Twinkle_Star } from "next/font/google";
-import Image from "next/image";
+import { Activity, Ambulance, ArrowRight, Baby, Bone, Brain, Clock, Eye, Heart, Mail, MapPin, Phone, Shield, Stethoscope, Users2 } from "lucide-react";
 import Link from "next/link";
-import { Users } from "node-appwrite";
 
 
 export default function Landing() {
   return (
     <><Header />
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-slate-950 text-white">
 
       <Link href="https://cdn.botpress.cloud/webchat/v3.0/shareable.html?configUrl=https://files.bpcontent.cloud/2025/06/21/11/20250621114212-13G5Y22B.json" className="fixed top-17 right-6 z-50 p-[2px] rounded-full bg-gradient-to-r from-green-400 via-blue-400 to-purple-500 hover:shadow-lg hover:shadow-green-500/50 transition-all duration-300 animate-border">
         <div className="px-4 py-2 rounded-full h-full w-full bg-black flex items-center gap-2 hover:bg-black/80">
@@ -20,11 +17,11 @@ export default function Landing() {
         </div>
       </Link>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black py-20 sm:py-32">
+      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.18),_transparent_28%),linear-gradient(180deg,_#020617_0%,_#0f172a_55%,_#020617_100%)] py-20 sm:py-28">
       {/* Background decoration */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-72 h-72 bg-green-500/20 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
-        <div className="absolute top-40 right-1/4 w-72 h-72 bg-green-400/20 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-0 left-1/4 w-72 h-72 bg-emerald-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+        <div className="absolute top-40 right-1/4 w-72 h-72 bg-cyan-400/10 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,55 +29,61 @@ export default function Landing() {
           {/* Left Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center bg-green-500/20 text-green-400 text-sm font-medium px-3 py-1 rounded-full border border-green-500/30">
+              <div className="inline-flex items-center bg-emerald-500/12 text-emerald-300 text-sm font-medium px-4 py-2 rounded-full border border-emerald-400/20 shadow-lg shadow-emerald-500/10">
                 <Shield className="w-4 h-4 mr-2" />
-                24/7 Emergency Care Available
+                Trusted Multispecialty Care in Kolkata
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight">
                 CarePulse
-                <span className="text-green-400 block">Medical Center</span>
-                Excellence in Healthcare
+                <span className="text-emerald-400 block text-4xl sm:text-5xl lg:text-6xl mt-2">Medical Center</span>
               </h1>
-              <p className="text-xl text-gray-300 leading-relaxed">
-                Providing compassionate, comprehensive healthcare services to our community for over 50 years. 
-                Your health and well-being are our top priority.
+              <p className="text-lg sm:text-xl font-semibold text-white leading-relaxed pt-4">
+                Compassionate Care, Clinical Excellence
+              </p>
+              <p className="max-w-xl text-base sm:text-lg text-slate-300 leading-relaxed">
+                Delivering evidence-based treatment, modern diagnostics, and patient-first care across multiple specialties.
+                Our team is committed to safe, timely, and personalized healthcare.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/home" className="group bg-green-500 text-black px-8 py-4 rounded-xl hover:bg-green-400 transition-all duration-200 font-semibold text-lg flex items-center justify-center shadow-lg hover:shadow-xl">
-                Book Appointment
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+            <div className="flex flex-col sm:flex-row gap-4 justify-start sm:justify-start">
+              <Link href="/home" className="group relative bg-gradient-to-r from-emerald-500 to-emerald-600 text-slate-950 px-6 py-3 rounded-xl font-semibold text-base flex items-center justify-center hover:from-emerald-400 hover:to-emerald-500 transition-all duration-300 transform hover:scale-105 overflow-hidden w-fit">
+                <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="relative flex items-center">
+                  Book Appointment
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
               </Link>
-              <button className="bg-transparent text-white px-8 py-4 rounded-xl border-2 border-green-500 hover:bg-green-500/10 transition-all duration-200 font-semibold text-lg shadow-sm hover:shadow-md">
-                Emergency: (555) 911-HELP
-              </button>
+              <Link href="/wayout" className="group relative text-white px-6 py-3 rounded-xl border-2 border-emerald-500/50 font-semibold text-base flex items-center justify-center transition-all duration-300 hover:border-emerald-400/80 overflow-hidden w-fit">
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/0 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="relative">Find Directions</span>
+              </Link>
             </div>
 
             {/* Trust indicators */}
-            <div className="flex flex-wrap items-center gap-8 pt-8 border-t border-gray-700">
-              <div className="flex items-center space-x-2">
-                <Users2 className="h-5 w-5 text-green-400" />
-                <span className="text-gray-300 font-medium">50+ Specialists</span>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-8 border-t border-emerald-500/20">
+              <div className="group flex items-center space-x-2 rounded-xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/15 to-emerald-500/5 px-3 py-3 backdrop-blur-sm hover:border-emerald-500/50 hover:from-emerald-500/25 transition-all duration-300">
+                <Users2 className="h-4 w-4 text-emerald-400 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
+                <span className="text-sm text-slate-200 font-medium">50+ Specialists</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <Clock className="h-5 w-5 text-green-400" />
-                <span className="text-gray-300 font-medium">24/7 Emergency</span>
+              <div className="group flex items-center space-x-2 rounded-xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/15 to-emerald-500/5 px-3 py-3 backdrop-blur-sm hover:border-emerald-500/50 hover:from-emerald-500/25 transition-all duration-300">
+                <Clock className="h-4 w-4 text-emerald-400 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
+                <span className="text-sm text-slate-200 font-medium">24/7 Emergency</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <Shield className="h-5 w-5 text-green-400" />
-                <span className="text-gray-300 font-medium">JCI Accredited</span>
+              <div className="group flex items-center space-x-2 rounded-xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/15 to-emerald-500/5 px-3 py-3 backdrop-blur-sm hover:border-emerald-500/50 hover:from-emerald-500/25 transition-all duration-300">
+                <Shield className="h-4 w-4 text-emerald-400 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
+                <span className="text-sm text-slate-200 font-medium">JCI Accredited</span>
               </div>
             </div>
           </div>
 
           {/* Right Content - Hospital Image/Info */}
           <div className="relative">
-            <div className="bg-gray-900 rounded-2xl shadow-2xl border border-green-500/20 overflow-hidden transform hover:scale-105 transition-transform duration-300">
+            <div className="rounded-[1.75rem] border border-emerald-500/15 bg-slate-900/80 shadow-2xl shadow-black/30 backdrop-blur overflow-hidden transform hover:scale-[1.01] transition-transform duration-300">
               {/* Hospital Info Header */}
-              <div className="bg-black/50 px-6 py-4 border-b border-green-500/20">
+              <div className="bg-black/40 px-6 py-4 border-b border-white/10">
                 <div className="flex items-center justify-between">
-                  <h3 className="font-semibold text-white">Hospital Information</h3>
+                  <h3 className="font-semibold text-white">Clinical Overview</h3>
                   <div className="flex space-x-2">
                     <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                     <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
@@ -92,40 +95,44 @@ export default function Landing() {
               {/* Hospital Content */}
               <div className="p-6 space-y-6">
                 {/* Stats Grid */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-green-500/10 p-4 rounded-lg border border-green-500/20">
-                    <div className="text-2xl font-bold text-green-400">Availability</div>
-                    <div className="text-sm text-gray-400">of Appointments</div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="rounded-2xl border border-emerald-500/15 bg-emerald-500/10 p-4">
+                    <div className="text-2xl font-bold text-emerald-400">24/7</div>
+                    <div className="text-sm text-slate-300">Emergency Care</div>
                   </div>
-                  <div className="bg-green-500/10 p-4 rounded-lg border border-green-500/20">
-                    <div className="text-2xl font-bold text-green-400">15</div>
-                    <div className="text-sm text-gray-400">Departments</div>
+                  <div className="rounded-2xl border border-emerald-500/15 bg-emerald-500/10 p-4">
+                    <div className="text-2xl font-bold text-emerald-400">15+</div>
+                    <div className="text-sm text-slate-300">Departments</div>
+                  </div>
+                  <div className="rounded-2xl border border-emerald-500/15 bg-emerald-500/10 p-4">
+                    <div className="text-2xl font-bold text-emerald-400">Fast</div>
+                    <div className="text-sm text-slate-300">Response & Triage</div>
                   </div>
                 </div>
 
                 {/* Services */}
-                <div className="bg-gray-800/50 rounded-lg p-4 h-32 flex items-center justify-center border border-green-500/10">
-                  <div className="text-gray-400 text-center">
-                    <div className="text-green-400 font-semibold mb-2">Our Specialties</div>
-                    <div className="text-sm">Cardiology • Neurology • Oncology • Pediatrics</div>
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-6 flex items-center justify-center min-h-40">
+                  <div className="text-center">
+                    <div className="text-emerald-400 font-semibold mb-2 text-sm uppercase tracking-[0.18em]">Core Specialties</div>
+                    <div className="text-base text-slate-300">Cardiology • Neurology • Orthopedics • Pediatrics</div>
                   </div>
                 </div>
 
                 {/* Recent Updates */}
                 <div className="space-y-3">
-                  <h4 className="font-medium text-white">Hospital Updates</h4>
+                  <h4 className="font-medium text-white">Clinical Highlights</h4>
                   <div className="space-y-2">
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-3 rounded-xl bg-white/5 px-3 py-2">
                       <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                      <span className="text-sm text-gray-400">New MRI facility now open</span>
+                      <span className="text-sm text-slate-300">Advanced MRI and imaging services available</span>
                     </div>
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-3 rounded-xl bg-white/5 px-3 py-2">
                       <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                      <span className="text-sm text-gray-400">Extended visiting hours</span>
+                      <span className="text-sm text-slate-300">Specialist consultations by appointment</span>
                     </div>
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-3 rounded-xl bg-white/5 px-3 py-2">
                       <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                      <span className="text-sm text-gray-400">COVID-19 safety protocols active</span>
+                      <span className="text-sm text-slate-300">Strict infection-control and patient safety protocols</span>
                     </div>
                   </div>
                 </div>
@@ -133,7 +140,7 @@ export default function Landing() {
             </div>
 
             {/* Floating elements */}
-            <div className="absolute -top-4 -right-4 bg-green-500 text-black px-3 py-1 rounded-full text-sm font-medium animate-bounce">
+            <div className="absolute -top-4 -right-4 bg-emerald-500 text-slate-950 px-3 py-1 rounded-full text-sm font-semibold shadow-lg shadow-emerald-500/30 animate-bounce">
               Open 24/7
             </div>
           </div>
@@ -143,41 +150,59 @@ export default function Landing() {
       <Statboxes />
 
       
-      <section id="features" className="py-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-1 bg-gradient-to-b from-green-900/30 to-black "></div>
-        <div className="text-center flex flex-col items-center">
-          <h2 className="text-3xl font-bold text-center text-white mb-4">
-            Smart Features for Better Care
+      <section id="features" className="relative overflow-hidden px-4 py-20">
+        <div className="absolute inset-0 bg-gradient-to-b from-emerald-950/40 via-slate-950 to-slate-950"></div>
+        <div className="relative text-center flex flex-col items-center mb-16">
+          <p className="text-sm uppercase tracking-[0.25em] text-emerald-300/80 font-semibold mb-4">
+            Why Choose Us
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 max-w-3xl">
+            Why Patients Choose CarePulse
           </h2>
-          <p className="text-slate-50 mb-7">
-            Appropiate Hospital, real-time appointment booking, secure payments
-            — all in one seamless experience
+          <div className="h-1 w-12 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full mb-6"></div>
+          <p className="max-w-2xl text-lg text-slate-300">
+            Designed around fast access, specialist care, and a calm patient experience from booking to follow-up.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="p-6 border-3 border-slate-500 bg-black shadow-sm shadow-green-500/50 rounded-lg transform hover:scale-105 transition-all duration-300  hover:shadow-md hover:shadow-green-500/50"
+              className="group relative rounded-2xl border border-white/10 bg-gradient-to-br from-white/7 to-white/3 p-8 shadow-xl shadow-black/20 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-emerald-400/40 hover:shadow-emerald-500/10 hover:shadow-2xl"
             >
-              <h3 className="text-xl font-semibold mb-3 text-green-400">
+              {/* Badge */}
+              <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-emerald-500/30">
+                {index + 1}
+              </div>
+              
+              {/* Icon */}
+              <div className="mb-6 flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/10 ring-1 ring-emerald-400/30 text-emerald-400 group-hover:from-emerald-500/30 group-hover:to-cyan-500/20 transition-all duration-300">
+                {feature.icon && <feature.icon className="w-7 h-7" />}
+              </div>
+              
+              <h3 className="text-xl font-bold mb-2 text-white group-hover:text-emerald-400 transition-colors duration-300">
                 {feature.title}
               </h3>
-              <p className="text-gray-300">{feature.description}</p>
+              <p className="text-slate-300 leading-relaxed text-sm">{feature.description}</p>
+              
+              {/* Hover accent */}
+              <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full group-hover:w-full transition-all duration-300"></div>
             </div>
           ))}
         </div>
       </section>
 
-      <section id="services" className="py-20 bg-gray-900">
+      <section id="services" className="py-20 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
+            <p className="text-sm uppercase tracking-[0.25em] text-emerald-300/80 font-semibold">
+              Specialties
+            </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white">
-              Our Medical Departments
+              Clinical Departments & Services
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              CarePulse Medical Center offers comprehensive healthcare services across multiple specialties,
-              ensuring you receive the best possible care for all your medical needs.
+            <p className="text-lg text-slate-300 max-w-3xl mx-auto">
+              Comprehensive services delivered by experienced clinicians, supported by modern diagnostics and patient-centered care pathways.
             </p>
           </div>
 
@@ -185,15 +210,15 @@ export default function Landing() {
             {departments.map((department, index) => (
               <div
                 key={index}
-                className="group bg-black p-6 rounded-xl border border-green-500/20 hover:border-green-500/40 hover:shadow-lg hover:shadow-green-500/10 transition-all duration-300 hover:-translate-y-1"
+                className="group rounded-2xl border border-emerald-500/15 bg-white/5 p-6 shadow-lg shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/30 hover:bg-white/7"
               >
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4 transition-all duration-300 bg-green-500/20 text-green-400 group-hover:bg-green-500 group-hover:text-black">
+                <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300 bg-emerald-500/15 text-emerald-400 ring-1 ring-emerald-400/20 group-hover:bg-emerald-500 group-hover:text-slate-950">
                   <department.icon className="h-6 w-6" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">
                   {department.title}
                 </h3>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-slate-300 leading-relaxed">
                   {department.description}
                 </p>
               </div>
@@ -202,19 +227,21 @@ export default function Landing() {
 
           {/* CTA Section */}
           <div className="mt-16 text-center">
-            <div className="bg-gradient-to-r from-green-500/10 to-green-400/10 rounded-2xl p-8 sm:p-12 border border-green-500/20">
+            <div className="rounded-[1.75rem] border border-emerald-500/15 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 p-8 sm:p-12 shadow-2xl shadow-black/20">
               <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-                Need Medical Attention?
+                Ready to Schedule Care?
               </h3>
-              <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-                Our experienced medical team is here to provide you with the highest quality care.
-                Schedule an appointment or visit our emergency department for immediate assistance.
+              <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+                Book an appointment, contact our emergency desk, or visit our directions page for the fastest route to the hospital.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/home" className="bg-green-500 text-black px-8 py-3 rounded-lg hover:bg-green-400 transition-colors duration-200 font-semibold">
+                <Link href="/home" className="bg-emerald-500 text-slate-950 px-8 py-3 rounded-2xl hover:bg-emerald-400 transition-colors duration-200 font-semibold shadow-lg shadow-emerald-500/20">
                   Schedule Appointment
                 </Link>
-                <button className="bg-transparent text-white px-8 py-3 rounded-lg border border-green-500 hover:bg-green-500/10 transition-colors duration-200 font-semibold">
+                <Link href="/wayout" className="bg-transparent text-white px-8 py-3 rounded-2xl border border-emerald-500/50 hover:bg-emerald-500/10 transition-colors duration-200 font-semibold">
+                  View Directions
+                </Link>
+                <button className="bg-red-500/10 text-red-700 px-8 py-3 rounded-2xl border-2 border-red-500/60 hover:border-red-400 hover:bg-red-500/30 transition-all duration-200 font-semibold ">
                   Emergency Services
                 </button>
               </div>
@@ -223,55 +250,113 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Steps Section with animations */}
-      <section className="py-20 px-4">
-        <h2 className="text-3xl font-bold text-center text-green-400 mb-12">
-          How It Works
+      {/* Patient Journey */}
+      <section className="py-20 px-4 bg-slate-950">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-emerald-400 mb-4">
+          Patient Care Journey
         </h2>
+        <p className="text-center max-w-2xl mx-auto text-slate-300 mb-12">
+          A streamlined process designed to reduce waiting time and support every stage of treatment.
+        </p>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="text-center p-6 border border-green-500 rounded-lg">
-            <div className="text-4xl font-bold text-green-400 mb-4">1</div>
-            <h3 className="text-xl font-semibold mb-3">Register/Login</h3>
-            <p className="text-gray-300">
-              Create your account or login to get started
+          <div className="text-center p-6 rounded-2xl border border-white/10 bg-white/5 shadow-lg shadow-black/20">
+            <div className="text-4xl font-bold text-emerald-400 mb-4">1</div>
+            <h3 className="text-xl font-semibold mb-3 text-white">Book Consultation</h3>
+            <p className="text-slate-300">
+              Choose a department and schedule your visit online or by phone.
             </p>
           </div>
-          <div className="text-center p-6 border border-green-500 rounded-lg">
-            <div className="text-4xl font-bold text-green-400 mb-4">2</div>
-            <h3 className="text-xl font-semibold mb-3">Choose Doctor</h3>
-            <p className="text-gray-300">
-              Select from our expert medical professionals
+          <div className="text-center p-6 rounded-2xl border border-white/10 bg-white/5 shadow-lg shadow-black/20">
+            <div className="text-4xl font-bold text-emerald-400 mb-4">2</div>
+            <h3 className="text-xl font-semibold mb-3 text-white">Clinical Assessment</h3>
+            <p className="text-slate-300">
+              Meet a specialist for diagnosis, tests, and a focused treatment plan.
             </p>
           </div>
-          <div className="text-center p-6 border border-green-500 rounded-lg">
-            <div className="text-4xl font-bold text-green-400 mb-4">3</div>
-            <h3 className="text-xl font-semibold mb-3">Schedule Time</h3>
-            <p className="text-gray-300">
-              Pick your preferred appointment slot
+          <div className="text-center p-6 rounded-2xl border border-white/10 bg-white/5 shadow-lg shadow-black/20">
+            <div className="text-4xl font-bold text-emerald-400 mb-4">3</div>
+            <h3 className="text-xl font-semibold mb-3 text-white">Treatment & Care</h3>
+            <p className="text-slate-300">
+              Receive treatment with coordinated support from our medical team.
             </p>
           </div>
-          <div className="text-center p-6 border border-green-500 rounded-lg">
-            <div className="text-4xl font-bold text-green-400 mb-4">4</div>
-            <h3 className="text-xl font-semibold mb-3">Confirm & Pay</h3>
-            <p className="text-gray-300">
-              Complete payment and receive notifications
+          <div className="text-center p-6 rounded-2xl border border-white/10 bg-white/5 shadow-lg shadow-black/20">
+            <div className="text-4xl font-bold text-emerald-400 mb-4">4</div>
+            <h3 className="text-xl font-semibold mb-3 text-white">Follow-Up Support</h3>
+            <p className="text-slate-300">
+              Continue recovery with follow-up visits, reports, and patient guidance.
             </p>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-black to-green-900/30 ">
-        <h2 className="text-3xl font-bold text-center text-green-400 mb-12">
-          Frequently Asked Questions
+      <section className="py-20 px-4 bg-gradient-to-b from-slate-950 to-emerald-950/30">
+        <h2 className="text-3xl font-bold text-center text-emerald-400 mb-4">
+          Common Patient Questions
         </h2>
+        <p className="text-center max-w-2xl mx-auto text-slate-300 mb-12">
+          Helpful answers for appointments, emergency care, and everyday hospital visits.
+        </p>
         <div className="max-w-3xl mx-auto space-y-6">
           {faqs.map((faq, index) => (
-            <div key={index} className="border border-green-500 rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-2">{faq.question}</h3>
-              <p className="text-gray-300">{faq.answer}</p>
+            <div key={index} className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg shadow-black/20">
+              <h3 className="text-xl font-semibold mb-2 text-white">{faq.question}</h3>
+              <p className="text-slate-300 leading-relaxed">{faq.answer}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="px-4 py-20 bg-slate-950">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-sm uppercase tracking-[0.25em] text-emerald-300/80 font-semibold mb-3">
+              Contact
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Visiting Information & Support
+            </h2>
+            <p className="max-w-2xl mx-auto text-slate-300">
+              Reach us for appointments, emergency guidance, and location details in central Kolkata.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            <div className="rounded-2xl border border-emerald-500/15 bg-white/5 p-6 shadow-lg shadow-black/20">
+              <Phone className="w-6 h-6 text-emerald-400 mb-4" />
+              <h3 className="text-lg font-semibold text-white mb-2">Appointment Desk</h3>
+              <p className="text-slate-300">(555) 123-4567</p>
+            </div>
+
+            <div className="rounded-2xl border border-emerald-500/15 bg-white/5 p-6 shadow-lg shadow-black/20">
+              <Shield className="w-6 h-6 text-emerald-400 mb-4" />
+              <h3 className="text-lg font-semibold text-white mb-2">Emergency Line</h3>
+              <p className="text-slate-300">24/7 emergency care available</p>
+            </div>
+
+            <div className="rounded-2xl border border-emerald-500/15 bg-white/5 p-6 shadow-lg shadow-black/20">
+              <MapPin className="w-6 h-6 text-emerald-400 mb-4" />
+              <h3 className="text-lg font-semibold text-white mb-2">Hospital Address</h3>
+              <p className="text-slate-300">1, Shakespeare Sarani, Kolkata, West Bengal 700071</p>
+            </div>
+
+            <div className="rounded-2xl border border-emerald-500/15 bg-white/5 p-6 shadow-lg shadow-black/20">
+              <Mail className="w-6 h-6 text-emerald-400 mb-4" />
+              <h3 className="text-lg font-semibold text-white mb-2">Email Support</h3>
+              <p className="text-slate-300">info@carepulsemedical.com</p>
+            </div>
+          </div>
+
+          <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+            <Link href="/wayout" className="bg-emerald-500 text-slate-950 px-8 py-3 rounded-2xl hover:bg-emerald-400 transition-colors duration-200 font-semibold text-center">
+              View Directions
+            </Link>
+            <Link href="/home" className="bg-transparent text-white px-8 py-3 rounded-2xl border border-white/15 hover:bg-white/5 transition-colors duration-200 font-semibold text-center">
+              Book Appointment
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -313,15 +398,18 @@ export default function Landing() {
 const features = [
   {
     title: "24/7 Emergency Care",
-    description: "Round-the-clock emergency services with immediate response",
+    description: "Round-the-clock emergency services with rapid triage and immediate response protocols.",
+    icon: Shield,
   },
   {
     title: "Online Appointments",
-    description: "Easy and quick appointment booking through our platform",
+    description: "Easy and secure appointment booking through our digital platform with real-time availability.",
+    icon: Clock,
   },
   {
-    title: "Expert Doctors",
-    description: "Access to highly qualified healthcare professionals",
+    title: "Expert Specialists",
+    description: "Access to highly qualified and board-certified healthcare professionals across all departments.",
+    icon: Users2,
   },
 ];
 

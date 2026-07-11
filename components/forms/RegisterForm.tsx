@@ -74,13 +74,13 @@ const RegisterForm = ({ user} : {user : User }) => {
   return (
     <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="flex-1 space-y-5">
-        <section className= "space-y-4">
-            <h1 className="header">Welcome 👋</h1>
-            <p className="text-dark-700">Let us know more about yourself.</p>
+        <section className= "space-y-3">
+            <h1 className="header text-emerald-400">Complete Your Profile</h1>
+            <p className="text-dark-700">Help us provide personalized care by sharing your medical history and health information with our specialist team.</p>
         </section>
 
         <section className= "space-y-6">
-            <div className="mb-8 space-y-1">
+            <div className="mt-12 mb-6 space-y-1">
                 <h2 className="sub-header">Personal Information</h2>
             </div>  
         </section>
@@ -195,7 +195,7 @@ const RegisterForm = ({ user} : {user : User }) => {
         </div>
 
         <section className= "space-y-6">
-            <div className="mb-9 space-y-1">
+            <div className="mt-12 mb-6 space-y-1">
                 <h2 className="sub-header">Medical Information</h2>
             </div>  
         </section>
@@ -282,7 +282,7 @@ const RegisterForm = ({ user} : {user : User }) => {
         </div>
 
         <section className= "space-y-6">
-            <div className="mb-9 space-y-1">
+            <div className="mt-12 mb-6 space-y-1">
                 <h2 className="sub-header">Identification and Verification</h2>
             </div>  
         </section>

@@ -3,44 +3,47 @@ import React from 'react'
 
 const Directions = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col lg:flex-row">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(16,185,129,0.14),_transparent_28%),linear-gradient(to_bottom,_#020617,_#0f172a_55%,_#020617)] text-white lg:grid lg:grid-cols-[0.95fr_1.35fr]">
       {/* Left Sidebar */}
-      <div className="lg:w-1/3 bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-900 text-white p-6 lg:p-8 shadow-2xl">
-        <div className="max-w-md mx-auto lg:max-w-none">
+      <div className="border-b border-emerald-500/10 bg-slate-950/70 px-5 py-8 backdrop-blur xl:px-10 lg:border-b-0 lg:border-r lg:border-emerald-500/10">
+        <div className="mx-auto max-w-2xl lg:max-w-xl">
           {/* Hospital Header */}
           <div className="mb-8">
-            <div className="flex items-center mb-4">
-              <div className="bg-emerald-500 p-3 rounded-full mr-4">
+            <div className="mb-6 flex items-center gap-4">
+              <div className="rounded-2xl bg-emerald-500/15 p-3 ring-1 ring-emerald-400/30">
                 <MapPin className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-white">CarePulse Medical Center</h1>
+                <p className="mb-1 text-xs font-semibold uppercase tracking-[0.28em] text-emerald-300/80">
+                  Location & Visitor Guide
+                </p>
+                <h1 className="text-2xl font-bold text-white lg:text-3xl">CarePulse Medical Center</h1>
                 <p className="text-emerald-200">Advanced Healthcare Center</p>
               </div>
             </div>
             
-            <div className="bg-black/20 rounded-lg p-4 border border-emerald-500/20">
-              <h2 className="text-lg font-semibold mb-2 text-emerald-300">Hospital Address</h2>
+            <div className="rounded-2xl border border-emerald-500/15 bg-white/5 p-5 shadow-[0_0_0_1px_rgba(16,185,129,0.04),0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-sm">
+              <h2 className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300">Hospital Address</h2>
               <p className="text-gray-100 leading-relaxed">
-                123 Healthcare Avenue<br />
-                Medical District, Downtown<br />
-                New York, NY 10001
+                1, Shakespeare Sarani<br />
+                Kolkata, West Bengal<br />
+                700071
               </p>
             </div>
           </div>
 
           {/* Contact Information */}
-          <div className="mb-8">
-            <h3 className="text-lg font-semibold mb-4 text-emerald-300 flex items-center">
+          <div className="mb-8 rounded-2xl border border-emerald-500/15 bg-slate-900/60 p-5 shadow-lg shadow-black/20 backdrop-blur-sm">
+            <h3 className="mb-4 flex items-center text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300">
               <Phone className="w-5 h-5 mr-2" />
               Contact Information
             </h3>
-            <div className="space-y-3">
-              <div className="flex items-center">
+            <div className="space-y-4 text-sm">
+              <div className="flex items-center rounded-xl bg-white/5 px-4 py-3">
                 <Phone className="w-4 h-4 mr-3 text-emerald-400" />
                 <span className="text-gray-100">(555) 123-4567</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center rounded-xl bg-white/5 px-4 py-3">
                 <Clock className="w-4 h-4 mr-3 text-emerald-400" />
                 <span className="text-gray-100">24/7 Emergency Services</span>
               </div>
@@ -49,114 +52,114 @@ const Directions = () => {
 
           {/* Nearest Transit Points */}
           <div className="mb-8">
-            <h3 className="text-lg font-semibold mb-4 text-emerald-300">Nearest Transit Points</h3>
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300">Nearest Transit Points</h3>
             
             <div className="space-y-4">
               {/* Bus Station */}
-              <div className="bg-black/20 rounded-lg p-4 border border-emerald-500/20 hover:bg-black/30 transition-colors">
-                <div className="flex items-center mb-2">
+              <div className="rounded-2xl border border-emerald-500/15 bg-white/5 p-5 shadow-lg shadow-black/15 transition-all hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-white/7">
+                <div className="mb-2 flex items-center">
                   <Bus className="w-5 h-5 mr-3 text-emerald-400" />
-                  <h4 className="font-semibold text-white">Central Bus Terminal</h4>
+                  <h4 className="font-semibold text-white">Esplanade Bus Terminal</h4>
                 </div>
-                <p className="text-gray-200 text-sm mb-2">Distance: 0.3 miles (5-minute walk)</p>
-                <p className="text-gray-300 text-sm">Located on Main Street, serves routes 15, 22, 45, and express lines</p>
+                <p className="text-gray-200 text-sm mb-2">Distance: 1.4 km (about 8-minute drive / 18-minute walk)</p>
+                <p className="text-gray-300 text-sm">Take a cab or walk toward Park Street, then continue to Shakespeare Sarani.</p>
               </div>
 
               {/* Train Station */}
-              <div className="bg-black/20 rounded-lg p-4 border border-emerald-500/20 hover:bg-black/30 transition-colors">
-                <div className="flex items-center mb-2">
+              <div className="rounded-2xl border border-emerald-500/15 bg-white/5 p-5 shadow-lg shadow-black/15 transition-all hover:-translate-y-0.5 hover:border-emerald-400/30 hover:bg-white/7">
+                <div className="mb-2 flex items-center">
                   <Train className="w-5 h-5 mr-3 text-emerald-400" />
-                  <h4 className="font-semibold text-white">Downtown Metro Station</h4>
+                  <h4 className="font-semibold text-white">Maidan Metro Station</h4>
                 </div>
-                <p className="text-gray-200 text-sm mb-2">Distance: 0.5 miles (8-minute walk)</p>
-                <p className="text-gray-300 text-sm">Blue and Green line connections, Exit B towards Medical District</p>
+                <p className="text-gray-200 text-sm mb-2">Distance: 1.2 km (about 5-minute drive / 15-minute walk)</p>
+                <p className="text-gray-300 text-sm">Use the Park Street exit and head east toward Shakespeare Sarani.</p>
               </div>
             </div>
           </div>
 
           {/* Directions */}
           <div className="mb-8">
-            <h3 className="text-lg font-semibold mb-4 text-emerald-300 flex items-center">
+            <h3 className="mb-4 flex items-center text-sm font-semibold uppercase tracking-[0.2em] text-emerald-300">
               <Navigation className="w-5 h-5 mr-2" />
               How to Reach Us
             </h3>
             
             <div className="space-y-6">
               {/* From Bus Terminal */}
-              <div className="bg-gradient-to-r from-emerald-900/50 to-black/30 rounded-lg p-4 border border-emerald-500/30">
-                <h4 className="font-semibold text-emerald-300 mb-3 flex items-center">
+              <div className="rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-emerald-950/70 to-slate-900/80 p-5 shadow-lg shadow-black/20">
+                <h4 className="mb-3 flex items-center font-semibold text-emerald-300">
                   <Bus className="w-4 h-4 mr-2" />
-                  From Central Bus Terminal
+                  From Esplanade Bus Terminal
                 </h4>
-                <ol className="text-sm text-gray-200 space-y-2">
+                <ol className="space-y-3 text-sm text-gray-200">
                   <li className="flex items-start">
-                    <span className="bg-emerald-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">1</span>
-                    Exit the terminal onto Main Street
+                    <span className="mr-3 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-emerald-500 text-xs font-semibold text-white">1</span>
+                    Exit the terminal toward Park Street / Jawaharlal Nehru Road
                   </li>
                   <li className="flex items-start">
-                    <span className="bg-emerald-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">2</span>
-                    Walk east for 2 blocks to Healthcare Avenue
+                    <span className="mr-3 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-emerald-500 text-xs font-semibold text-white">2</span>
+                    Continue toward Park Street and turn onto Shakespeare Sarani
                   </li>
                   <li className="flex items-start">
-                    <span className="bg-emerald-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">3</span>
-                    Turn left (north) - hospital will be on your right
+                    <span className="mr-3 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-emerald-500 text-xs font-semibold text-white">3</span>
+                    The medical center will be on your left side after a short walk
                   </li>
                 </ol>
-                <div className="mt-3 flex items-center text-emerald-200 text-sm">
+                <div className="mt-4 flex items-center text-sm text-emerald-200">
                   <Scale className="w-4 h-4 mr-1" />
-                  5 minutes walk
+                  18 minutes walk
                 </div>
               </div>
 
               {/* From Train Station */}
-              <div className="bg-gradient-to-r from-emerald-900/50 to-black/30 rounded-lg p-4 border border-emerald-500/30">
-                <h4 className="font-semibold text-emerald-300 mb-3 flex items-center">
+              <div className="rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-emerald-950/70 to-slate-900/80 p-5 shadow-lg shadow-black/20">
+                <h4 className="mb-3 flex items-center font-semibold text-emerald-300">
                   <Train className="w-4 h-4 mr-2" />
-                  From Downtown Metro Station
+                  From Maidan Metro Station
                 </h4>
-                <ol className="text-sm text-gray-200 space-y-2">
+                <ol className="space-y-3 text-sm text-gray-200">
                   <li className="flex items-start">
-                    <span className="bg-emerald-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">1</span>
-                    Take Exit B (Medical District exit)
+                    <span className="mr-3 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-emerald-500 text-xs font-semibold text-white">1</span>
+                    Take the Park Street exit from the station
                   </li>
                   <li className="flex items-start">
-                    <span className="bg-emerald-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">2</span>
-                    Head north on Medical Plaza Boulevard
+                    <span className="mr-3 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-emerald-500 text-xs font-semibold text-white">2</span>
+                    Walk east along Park Street toward Shakespeare Sarani
                   </li>
                   <li className="flex items-start">
-                    <span className="bg-emerald-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">3</span>
-                    Turn right on Healthcare Avenue
+                    <span className="mr-3 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-emerald-500 text-xs font-semibold text-white">3</span>
+                    Continue straight to reach 1, Shakespeare Sarani
                   </li>
                   <li className="flex items-start">
-                    <span className="bg-emerald-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">4</span>
-                    Hospital entrance is 100 yards ahead
+                    <span className="mr-3 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-emerald-500 text-xs font-semibold text-white">4</span>
+                    The hospital entrance will be on the main road
                   </li>
                 </ol>
-                <div className="mt-3 flex items-center text-emerald-200 text-sm">
+                <div className="mt-4 flex items-center text-sm text-emerald-200">
                   <Scaling className="w-4 h-4 mr-1" />
-                  8 minutes walk
+                  15 minutes walk
                 </div>
               </div>
 
               {/* By Car */}
-              <div className="bg-gradient-to-r from-emerald-900/50 to-black/30 rounded-lg p-4 border border-emerald-500/30">
-                <h4 className="font-semibold text-emerald-300 mb-3 flex items-center">
+              <div className="rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-emerald-950/70 to-slate-900/80 p-5 shadow-lg shadow-black/20">
+                <h4 className="mb-3 flex items-center font-semibold text-emerald-300">
                   <Car className="w-4 h-4 mr-2" />
                   By Car
                 </h4>
-                <div className="text-sm text-gray-200 space-y-2">
-                  <p>• Valet parking available at main entrance</p>
-                  <p>• Self-parking garage on Hospital Way (first 2 hours free)</p>
-                  <p>• Street parking on Healthcare Avenue (metered)</p>
+                <div className="space-y-2 text-sm text-gray-200">
+                  <p>• Valet parking available at the main entrance</p>
+                  <p>• Use AJC Bose Road or Park Street for the smoothest approach</p>
+                  <p>• Street parking is available near Shakespeare Sarani (subject to local rules)</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Emergency Note */}
-          <div className="bg-red-900/30 border border-red-500/30 rounded-lg p-4">
-            <h4 className="font-semibold text-red-300 mb-2">Emergency Services</h4>
-            <p className="text-red-100 text-sm">
+          <div className="rounded-2xl border border-red-500/25 bg-gradient-to-r from-red-950/60 to-slate-900/80 p-5 shadow-lg shadow-black/20">
+            <h4 className="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-red-300">Emergency Services</h4>
+            <p className="text-sm leading-relaxed text-red-100">
               For medical emergencies, call 911 or use the emergency entrance on the east side of the building.
             </p>
           </div>
@@ -164,33 +167,42 @@ const Directions = () => {
       </div>
 
       {/* Right Side - Google Maps */}
-      <div className="lg:w-2/3 h-[500px] lg:h-screen">
-        <div className="w-full h-full relative">
+      <div className="min-h-[70vh] lg:sticky lg:top-0 lg:min-h-screen">
+        <div className="relative h-full min-h-[70vh] overflow-hidden bg-slate-900 lg:min-h-screen">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731368459418!3d40.75889797932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
+            src="https://www.google.com/maps?q=1%2C%20Shakespeare%20Sarani%2C%20Kolkata%2C%20West%20Bengal%20700071&output=embed"
+            className="absolute inset-0 h-full w-full border-0"
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="CarePulse Medical Center Location"
-            className="rounded-none lg:rounded-l-lg"
           ></iframe>
+
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
+
+          {/* Location Ribbon */}
+          <div className="absolute left-4 top-4 z-10 rounded-full border border-emerald-400/30 bg-slate-950/80 px-4 py-2 text-sm font-medium text-emerald-200 shadow-lg backdrop-blur-md">
+            Kolkata, West Bengal • 24/7 Care
+          </div>
           
-          {/* Map Overlay Info */}
-          <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-lg max-w-xs">
-            <div className="flex items-center mb-2">
-              <MapPin className="w-5 h-5 mr-2 text-emerald-600" />
-              <h3 className="font-semibold text-gray-800">CarePulse General Hospital</h3>
-            </div>
-            <p className="text-sm text-gray-600">
-              123 Healthcare Avenue<br />
-              New York, NY 10001
-            </p>
-            <div className="mt-3 flex items-center text-sm text-emerald-600">
-              <Clock className="w-4 h-4 mr-1" />
-              Open 24/7
+          {/* Map Footer Info */}
+          <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-emerald-200/40 bg-white/95 p-5 shadow-2xl backdrop-blur-sm">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-center">
+                <div className="mr-3 rounded-2xl bg-emerald-500/10 p-3 text-emerald-600">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-base font-semibold text-slate-800">CarePulse General Hospital</h3>
+                  <p className="text-sm leading-relaxed text-slate-600">
+                    1, Shakespeare Sarani, Kolkata, West Bengal 700071
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center rounded-full bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-700 sm:justify-end">
+                <Clock className="w-4 h-4 mr-2" />
+                Open 24/7
+              </div>
             </div>
           </div>
         </div>

@@ -65,22 +65,20 @@ const Statboxes: React.FC = () => {
         </div>
 
         {/* Testimonial */}
-        <div className="mt-20">
-          <div className="bg-gray-900 rounded-2xl p-8 sm:p-12 shadow-lg border border-green-500/20">
-            <div className="max-w-4xl mx-auto text-center">
-              <blockquote className="text-lg sm:text-2xl text-white font-medium mb-8 leading-relaxed">
-                "The care I received at CarePulse was exceptional. From the moment I walked in, 
-                the staff made me feel comfortable and well-cared for. The doctors were thorough, 
-                compassionate, and truly dedicated to my recovery. I couldn't have asked for better treatment."
+        <div className="mt-16">
+          <div className="max-w-2xl mx-auto bg-gradient-to-br from-emerald-500/10 to-cyan-500/5 rounded-2xl p-6 shadow-lg border border-emerald-500/20 hover:border-emerald-500/40 transition-all duration-300">
+            <div className="text-center">
+              <blockquote className="text-base sm:text-lg text-white font-medium mb-6 leading-relaxed">
+                "The care I received at CarePulse was exceptional. The staff made me feel comfortable and well-cared for. The doctors were thorough, compassionate, and truly dedicated to my recovery."
               </blockquote>
               
-              <div className="flex items-center justify-center space-x-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
-                  <span className="text-black font-bold text-lg">MJ</span>
+              <div className="flex items-center justify-center space-x-3">
+                <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-slate-950 font-bold text-sm">MJ</span>
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold text-white">Maria Johnson</div>
-                  <div className="text-gray-400">Patient, Cardiac Surgery</div>
+                  <div className="font-semibold text-white text-sm">Maria Johnson</div>
+                  <div className="text-slate-400 text-xs">Cardiac Surgery Patient</div>
                 </div>
               </div>
             </div>

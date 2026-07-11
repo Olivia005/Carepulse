@@ -58,14 +58,18 @@ const Success = async ({params: {userId}, searchParams} : SearchParamProps) => {
                 <p>{formatDateTime(appointment.schedule).dateTime}</p>
               </div>
            </section>
-           <Button variant='outline' className='shad-primary-btn' asChild>
-              <Link href={`/patients/${userId}/new-appointment`}>
-              New Appointment
-              </Link>
-              <Link className='border border-green-500 bg-black' href={`/payment`}>
-              Proceed to Payment
-              </Link>
-           </Button>
+           <div className='flex flex-col gap-4 sm:flex-row'>
+             <Button variant='outline' className='shad-primary-btn' asChild>
+                <Link href={`/patients/${userId}/new-appointment`}>
+                New Appointment
+                </Link>
+             </Button>
+             <Button variant='outline' className='border border-green-500 bg-black text-white hover:bg-zinc-900' asChild>
+                <Link href={`/payment`}>
+                Proceed to Payment
+                </Link>
+             </Button>
+           </div>
             <p className='copyright'>© 2025 CarePulse</p>
         </div>
     </div>

@@ -8,7 +8,12 @@ import {columns} from '@/components/table/columns'
 
 const Admin = async () => {
     
-    const appointments = await getRecentAppointmentList()
+    const appointments = (await getRecentAppointmentList()) || {
+        scheduledCount: 0,
+        pendingCount: 0,
+        cancelledCount: 0,
+        documents: [],
+    };
   return (
     <div className='mx-auto flex max-w-7xl flex-col space-y-14'>
         <header className='admin-header'>

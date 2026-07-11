@@ -170,9 +170,9 @@ const Footer: React.FC = () => {
               <li className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 text-green-400 mt-1" />
                 <span>
-                  123 Healthcare Avenue
+                  1, Shakespeare Sarani
                   <br />
-                  Medical District, Downtown New York, NY 10001
+                  Kolkata, West Bengal 700071
                 </span>
               </li>
               <li className="flex items-center space-x-3">
